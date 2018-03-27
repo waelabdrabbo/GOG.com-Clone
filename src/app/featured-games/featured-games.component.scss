@@ -1,0 +1,18 @@
+.feauredGames {
+    .productWrapper {
+        padding-left: 20px;
+        width: 20%;
+        float: left;
+        .product {
+            height: auto;
+            display: block;
+            background-color: #dedede;
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+}
