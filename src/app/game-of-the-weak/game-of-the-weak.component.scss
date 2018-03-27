@@ -1,0 +1,21 @@
+.gameOfTheWeek {
+    position: relative;
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    .product {
+        position: relative;
+    }
+    .checkbox {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        padding: 7px 12px;
+        border: 1px solid #a9a9a9;
+        border-radius: 5px;
+        span {
+            font-weight: 600
+        }
+    }
+}

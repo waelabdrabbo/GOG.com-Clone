@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+// @import '~bootstrap/dist/css/bootstrap.min.css';
+@import 'normalize';
+@import '~assets/css/icons.css';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,700');
+body {
+  background: -webkit-linear-gradient(90deg, #b0acb7 0.10, #c2c2c2 100%);
+  background: -moz-linear-gradient(0deg, #b0acb7 0.10, #c2c2c2 100%);
+  background: linear-gradient(0deg, #b0acb7 0.10, #c2c2c2 100%);
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+  font-size: 14px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.container {
+  position: relative;
+  max-width: 1060px;
+  margin: auto;
+  padding: 0 2%;
+}
