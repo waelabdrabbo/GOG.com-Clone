@@ -1,16 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
 // @import '~bootstrap/dist/css/bootstrap.min.css';
+@import 'layout';
 @import 'normalize';
 @import 'colors';
 @import '~assets/css/icons.css';
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,700');
+html,
 body {
   background: -webkit-linear-gradient(90deg, #c2c2c2 0.10, #b0acb7 100%);
   background: -moz-linear-gradient(0deg, #c2c2c2 0.10, #b0acb7 100%);
   background: linear-gradient(0deg, #c2c2c2 0.10, #b0acb7 100%);
   font-family: 'Source Sans Pro', sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
 }
+
 a {
   font-size: 14px;
   text-decoration: none;
@@ -18,20 +27,26 @@ a {
     text-decoration: none;
   }
 }
+
 h1 {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 15px;
 }
+
 .container {
   position: relative;
   max-width: 1060px;
   margin: auto;
   padding: 0 2%;
 }
+
 .product {
   position: relative;
-  display: inline-flex;
+  img {
+    width: 100%;
+    height: auto;
+  }
   a {
     position: absolute;
     width: 100%;
@@ -40,22 +55,33 @@ h1 {
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 1;
   }
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 5px rgba(0,
+  0,
+  0,
+  0.3);
   &:hover {
-      .checkbox {
-          background-color: $greenColor;
-          border-color: darken($greenColor, 10%)
-      }
+    .checkbox {
+      background-color: $greenColor;
+      border-color: darken($greenColor, 10%)
+    }
   }
 }
+
 .checkbox {
-  color: #ffffff;
+  color: #404040;
   position: absolute;
   bottom: 10px;
   right: 10px;
-  padding: 7px 12px;
+  padding: 5px 10px;
   border: 1px solid #a9a9a9;
   border-radius: 5px;
-
+  font-size: 13px;
+}
+.discount {
+  background-color: $greenColor;
+  border: 1px solid #a9a9a900;;
+  right: 76px;
+  color: #f2f2f2
 }

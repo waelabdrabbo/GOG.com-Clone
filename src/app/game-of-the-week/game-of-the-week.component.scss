@@ -1,8 +1,10 @@
 .gameOfTheWeek {
     position: relative;
-    margin-top: 70px;
     img {
         max-width: 100%;
         height: auto;
+    }
+    .checkbox {
+        color: #f2f2f2
     }
 }

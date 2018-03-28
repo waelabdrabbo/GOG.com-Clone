@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeaturedGamesComponent implements OnInit {
 
+  products = [];
+
   constructor() { }
 
   ngOnInit() {

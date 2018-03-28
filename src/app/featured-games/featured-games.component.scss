@@ -1,18 +1,28 @@
 .feauredGames {
-    .productWrapper {
-        padding-left: 20px;
-        width: 20%;
-        float: left;
         .product {
             height: auto;
             display: block;
             background-color: #dedede;
+            .caption {
+                padding: 8px 10px 0 10px;
+                height: 80px;
+                position: relative;
+                overflow: hidden;
+            }
+            .title {
+                height: 34px;
+                line-height: 17px;
+                white-space: normal;
+                h1 {
+                    font-weight: 600;
+                    font-size: 13px;
+                    margin: 0;
+                }
+            }
             img {
                 display: block;
                 width: 100%;
                 height: auto;
             }
         }
-    }
-
 }
