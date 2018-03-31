@@ -1,6 +1,10 @@
-# Gog.Com
+# GOG.com Clone
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
+
+## Install
+
+Clone this Repo then run `npm install` .
 
 ## Development server
 

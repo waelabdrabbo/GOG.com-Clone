@@ -1,0 +1,38 @@
+<div class="cart">
+  <a href="#">
+    <i class="icon-cart"></i>
+    <span>{{ cartGames.length }}</span>
+  </a>
+  <div class="cartDropDown">
+    <div *ngIf="cartGames.length" class="cartContent">
+      <div class="cartInfo">
+        <span>{{ cartGames.length }} items in cart</span>
+        <div class="push-right">
+          <span class="totalCost">{{ cartTotal | currency }}</span>
+          <span (click)="emptyCart()" class="clearCart">Clear Cart</span>
+        </div>
+      </div>
+      <ul>
+        <li *ngFor="let cartGame of cartGames; let i = index">
+          <img class="smallThumbnail" src="{{cartGame.imagePath}}" alt="">
+          <div class="gameContent">
+            <div>
+              <span class="title">{{ cartGame.title }}</span>
+              <span (click)="removeCartGame(i)" class="removeGame">Remove</span>
+            </div>
+            <div class="price">
+              <span>{{ cartGame.price | currency }}</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!cartGames.length" class="cartEmpty">
+      <p>
+        <i class="icon-cart"></i>
+      </p>
+      <p> Your cart is empty
+      </p>
+    </div>
+  </div>
+</div>

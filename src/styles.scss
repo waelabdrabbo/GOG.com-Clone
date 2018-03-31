@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-// @import '~bootstrap/dist/css/bootstrap.min.css';
 @import 'layout';
 @import 'normalize';
 @import 'colors';
@@ -43,6 +42,7 @@ h1 {
 
 .product {
   position: relative;
+  display: inline-grid;
   img {
     width: 100%;
     height: auto;
@@ -62,14 +62,22 @@ h1 {
   0,
   0.3);
   &:hover {
-    .checkbox {
+    .btn {
       background-color: $greenColor;
       border-color: darken($greenColor, 10%)
+    }
+    .discount {
+      border: 1px solid #a9a9a900;
+    }
+    .btnOwned {
+      background-color: transparent;
+      border: 1px solid #c5c5c5;
+      color: #c5c5c5;
     }
   }
 }
 
-.checkbox {
+.btn {
   color: #404040;
   position: absolute;
   bottom: 10px;
@@ -78,10 +86,23 @@ h1 {
   border: 1px solid #a9a9a9;
   border-radius: 5px;
   font-size: 13px;
+  cursor: pointer;
 }
+
+.btnPrice {
+  box-shadow: 0px 1px 1px #a5a5a5;
+}
+
 .discount {
   background-color: $greenColor;
-  border: 1px solid #a9a9a900;;
+  border: 1px solid #a9a9a900;
   right: 76px;
-  color: #f2f2f2
+  color: #f2f2f2;
+  cursor: initial;
+}
+
+.btnOwned {
+  cursor: not-allowed;
+  border: 1px solid #c5c5c5;
+  color: #c5c5c5;
 }

@@ -1,85 +1,36 @@
 <div class="feauredGames">
   <div class="grid grid-pad">
-      <div class="col-1-5">
-        <div class="product">
-          <img class="img-fluid" src="assets/images/product1.jpg" alt="">
-          <div class="caption">
-              <div class="title">
-                  <h1>oddworld: stranger’ swrath</h1>
-              </div>
-              <div (click)="addProduct()" class="checkbox">
-                <div class="price">
-                  <span>
-                    $59.99
-                  </span>
-                </div>
-              </div>
-              <div class="checkbox discount">
-                  <div class="price">
-                    <span>
-                      -50%
-                    </span>
-                  </div>
-                </div>
+    <div *ngFor="let game of games | filter: filterGame" class="col-1-5">
+      <div class="product">
+        <img class="img-fluid" src="{{game.imagePath}}" alt="">
+        <div class="caption">
+          <div class="title">
+            <h1>{{game.title}}</h1>
           </div>
-
+          <div *ngIf="!game.owned" class="btn btnPrice">
+            <div (click)="addToCart(game)" class="price">
+              <span *ngIf="inCart.indexOf(game) == -1">
+                ${{game.price}}
+              </span>
+              <span *ngIf="inCart.indexOf(game) > -1">In Cart</span>
+            </div>
+          </div>
+          <div *ngIf="game.discount" class="btn discount">
+            <div class="price">
+              <span>
+                {{game.discount}}%
+              </span>
+            </div>
+          </div>
+          <div *ngIf="game.owned" class="btn btnOwned">
+            <div class="">
+              <span>
+                Owned
+              </span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-1-5">
-          <div class="product">
-            <a href=""></a>
-            <img class="img-fluid" src="assets/images/theWitcher.jpg" alt="">
-            <h1>oddworld: stranger’swrath</h1>
-            <div class="checkbox">
-              <div class="price">
-                <span>
-                  $59.99
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-1-5">
-            <div class="product">
-              <a href=""></a>
-              <img class="img-fluid" src="assets/images/theWitcher.jpg" alt="">
-              <h1>oddworld: stranger’swrath</h1>
-              <div class="checkbox">
-                <div class="price">
-                  <span>
-                    $59.99
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-1-5">
-              <div class="product">
-                <a href=""></a>
-                <img class="img-fluid" src="assets/images/theWitcher.jpg" alt="">
-                <h1>oddworld: stranger’swrath</h1>
-                <div class="checkbox">
-                  <div class="price">
-                    <span>
-                      $59.99
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-1-5">
-                <div class="product">
-                  <a href=""></a>
-                  <img class="img-fluid" src="assets/images/theWitcher.jpg" alt="">
-                  <h1>oddworld: stranger’swrath</h1>
-                  <div class="checkbox">
-                    <div class="price">
-                      <span>
-                        $59.99
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    </div>
   </div>
 </div>

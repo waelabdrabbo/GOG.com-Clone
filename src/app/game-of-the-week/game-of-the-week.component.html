@@ -1,18 +1,21 @@
 <div class="gameOfTheWeek">
-    <div class="grid grid-pad">
-      <div class="col-1-1">
-          <h1>Game of the Week</h1>
-          <div class="product">
-            <a href=""></a>
-            <img class="img-fluid" src="assets/images/theWitcher.jpg" alt="">
-            <div class="checkbox">
-              <div class="price">
-                <span>
-                  $59.99
-                </span>
-              </div>
-            </div>
+  <div class="grid grid-pad">
+    <h1>Game of the Week</h1>
+    <div *ngFor="let game of games | filter: filterGame" class="col-1-1">
+      <div class="product">
+        <div class="title">
+          <h1>{{game.title}}</h1>
+        </div>
+        <img class="img-fluid" src="assets/images/theWitcher.jpg" alt="">
+        <div class="btn btnPrice">
+          <div (click)="addToCart(game)" class="price">
+            <span *ngIf="inCart.indexOf(game) == -1">
+              ${{game.price}}
+            </span>
+            <span *ngIf="inCart.indexOf(game) > -1">In Cart</span>
           </div>
+        </div>
       </div>
+    </div>
   </div>
 </div>
