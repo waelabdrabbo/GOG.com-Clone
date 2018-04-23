@@ -22,6 +22,7 @@ export class GamesService {
     private httpClient: HttpClient,
   ) { }
 
+  // Get the Games from the DataBase 'FireBase'
   fetchGamesFromDB(): Observable<any> {
     return this.httpClient.get(`${environment.dataBaseApi}/games.json`)
       .map(gameSingle => {
@@ -36,28 +37,20 @@ export class GamesService {
         return adjustedFetchedGames;
       });
   }
-  fetchGameOfTheWeekFromDB(indexID: string): Observable<any> {
-    return this.httpClient.get(`${environment.dataBaseApi}/games/${indexID}.json`)
-      .map(gameOfTheWeek => {
-        if (gameOfTheWeek === null) {
-          throw new Error('Game not found');
-        }
-        const adjustedGame = {
-          ...gameOfTheWeek,
-          game: indexID
-        };
-        return adjustedGame;
-      });
-  }
+
+  // set the varabiles of the Games data
   setAllGames(fetchedGames: Game[]) {
     this.allGames = fetchedGames;
   }
 
+  // slice the Game array
   getAllGames() {
     return this.allGames.slice();
   }
 
+  // add to cart function
   addToCart(game: Game) {
+    // add only one item
     if (this.cartAddedGames.indexOf(game) === -1) {
       this.cartAddedGames.push(game);
     }
@@ -71,6 +64,7 @@ export class GamesService {
     return this.cartAddedGames;
   }
 
+  // calculate the total of the cart
   calculateCartTotal() {
     this.cartTotal = 0;
     this.cartAddedGames.forEach(element => {
@@ -82,12 +76,14 @@ export class GamesService {
     return this.cartTotal;
   }
 
+  // Manipulate the cart with the total games added
   cartGameManipulate(game: Game, increase: boolean = false) {
     const manipulatedGame = this.cartAddedGames.find(mp => mp === game);
     this.calculateCartTotal();
     this.cartTotalEmitter.emit(this.cartTotal);
   }
 
+  // remove only one item has added to cart
   removeCartSingleItem(itemIndex: number) {
     this.cartAddedGames[itemIndex].qty = 1;
     const removedGameName = this.cartAddedGames[itemIndex].title;
@@ -97,6 +93,7 @@ export class GamesService {
     this.cartTotalEmitter.emit(this.cartTotal);
   }
 
+  // clear items from cart
   emptyCart() {
     for (const cp of this.cartAddedGames) { cp.qty = 1; }
     this.cartAddedGames.length = 0;

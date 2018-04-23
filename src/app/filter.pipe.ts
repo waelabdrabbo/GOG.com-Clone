@@ -4,6 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   pure: false
 })
 export class FilterPipe implements PipeTransform {
+  // custom games filter
   transform(games: any[], callback: (item: any) => boolean): any {
     if (!games || !callback) {
         return games;

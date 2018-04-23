@@ -11,6 +11,7 @@ export class GameOfTheWeekComponent implements OnInit, OnDestroy {
   @Input() product: Game;
   games: Game[];
   inCart = [];
+  // get the Game of the Week only
   filterGame(game: any) {
     return game.gameOfTheWeek === true;
   }

@@ -15,14 +15,14 @@ export class CartComponent implements OnInit, OnDestroy {
   constructor(private gameServices: GamesService) { }
 
   ngOnInit() {
-
+    // get the added games
     this.cartGames = this.gameServices.getCartAddedGames();
     this.cartAdditionSubscription = this.gameServices.cartAdditionEmitter.subscribe(
       (games: Game[]) => {
         this.cartGames = games;
       }
     );
-
+    // get cart total
     this.cartTotal = this.gameServices.getCartTotal();
     this.cartTotalSubscription = this.gameServices.cartTotalEmitter.subscribe(
       (cTotal: number) => {

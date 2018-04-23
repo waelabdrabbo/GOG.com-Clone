@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
+  // FireBase API
   dataBaseApi: 'https://gogcom-7c941.firebaseio.com/'
 };
