@@ -1,4 +1,4 @@
-# GOG.com Clone
+# Shopping Cart Angular Application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
 
